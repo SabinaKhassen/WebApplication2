@@ -28,8 +28,7 @@ namespace BusinessLayer.Author
 
             using (var unitOfWork = unitOfWorkFactory.Create())
             {
-               var authorsList = unitOfWork.AuthorUowRepository.GetAll();
-                mapper.Map<AuthorBO>(authorsList);
+               authors = unitOfWork.AuthorUowRepository.GetAll().Select(item=>mapper.Map<AuthorBO>(item)).ToList();
             }
                 return authors;
         }
