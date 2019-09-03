@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-@Html.ActionLink("Create author", "Create")
+@Html.ActionLink("Create author", "Edit")
 
 <table class="table table-striped">
     <thead>
@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in ViewBag.Authors)
             {
             <tr>
                 <td scope="row">@item.FirstName</td>

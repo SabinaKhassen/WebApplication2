@@ -43,7 +43,7 @@ namespace DataLayer.UnitOfWork
 
         protected virtual void Dispose(bool disposing)
         {
-            if(this.disposed)
+            if(!this.disposed)
             {
                 if(disposing)
                 {
@@ -56,7 +56,7 @@ namespace DataLayer.UnitOfWork
 
         public void Dispose()
         {
-            Dispose();
+            Dispose(true);
             GC.SuppressFinalize(this);
         }
     }

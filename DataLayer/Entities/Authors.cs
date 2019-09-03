@@ -14,6 +14,7 @@ namespace DataLayer
             Books = new HashSet<Books>();
         }
 
+        //[NotMapped]
         public int Id { get; set; }
 
         [StringLength(100)]
